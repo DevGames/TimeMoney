@@ -11,7 +11,7 @@ class Event extends ArrayT implements \pocketmine\event\Listener{
     }
 
     public function Packet(\pocketmine\event\server\DataPacketReceiveEvent $ev){
-    if($this->getTime($this->getVar()->array, $ev->getPlayer()->getName()) == $this->getVar()->array[$ev->getPlayer()->getName()] + $timeconfig){
+    if($this->getTime($this->getVar()->array, $ev->getPlayer()->getName()) >= time() - $timeconfig){
     $this->getVar()->array[$ev->getPlayer()->getName()] = time();
     EconomyAPI::getInstance()->addMoney($ev->getPlayer()->getName(),$moneyconfig);
     }

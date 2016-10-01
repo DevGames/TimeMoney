@@ -8,6 +8,9 @@ class TimeMoney extends \pocketmine\plugin\PluginBase{
 
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents(new Event(), $this);
+        $cfg = ["Money" => 1,"Time" => 5];
+        $this->config = new \pocketmine\utils\Config($this->getDataFolder()."config.yml",\pocketmine\utils\Config::YAML,$cfg);
+        $this->config->save();
     }
     
 }

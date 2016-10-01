@@ -1,5 +1,5 @@
 name: TimeMoney
-main: TimeMoney\Main
+main: TimeMoney\TimeMoney
 version: 1.0.0
 api: 2.0.0
 authors: [Nawaf_Craft1b, iBa4x]

@@ -1,17 +1,12 @@
 <?php
-
 namespace TimeMoney;
-
 class TimeMoney extends \pocketmine\plugin\PluginBase{
-
     public $array = array();
-
-    public function onEnable() {
-        $this->getServer()->getPluginManager()->registerEvents(new Event(), $this);
+    public function onEnable(){
         $cfg = ["Money" => 1,"Time" => 5];
+        $this->getServer()->getPluginManager()->registerEvents(new Event(), $this);
         $this->config = new \pocketmine\utils\Config($this->getDataFolder()."config.yml",\pocketmine\utils\Config::YAML,$cfg);
         $this->config->save();
     }
-    
 }
 ?>

@@ -14,8 +14,7 @@ class Event extends ArrayT implements \pocketmine\event\Listener{
     if($this->getTime($this->getVar()->array, $ev->getPlayer()->getName()) == $this->getVar()->array[$ev->getPlayer()->getName()] + $timeconfig){
     $this->getVar()->array[$ev->getPlayer()->getName()] = time();
     EconomyAPI::getInstance()->addMoney($ev->getPlayer()->getName(),$moneyconfig);
-       }
     }
-    
+  }  
 }
 ?>

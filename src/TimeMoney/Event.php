@@ -9,7 +9,7 @@ class Event extends ArrayT implements \pocketmine\event\Listener{
     }
     
     public function Packet(\pocketmine\event\server\DataPacketReceiveEvent $ev){
-        if($this->getTime($this->getVar()->array, $ev->getPlayer()->getName()) >= time() - $this->getVar()->config->get("Time")){
+        if($this->getVar()->array[$ev->getPlayer()->getName()] >= time() - $this->getVar()->config->get("Time")){
             $this->getVar()->array[$ev->getPlayer()->getName()] = time();
             \onebone\economyapi\EconomyAPI::getInstance()->addMoney($ev->getPlayer()->getName(),$this->getVar()->config->get("Money"));
         }

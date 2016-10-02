@@ -5,6 +5,7 @@ class Base extends TimeMoney {
         return $this;
     }
     public function getFunction(){
+        if($this == $this){ return; }
         return $this;
     }
 }
